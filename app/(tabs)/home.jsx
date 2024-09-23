@@ -47,9 +47,11 @@ const Home = () => {
                 <Text className="font-pmedium text-sm text-gray-100">
                   Welcome Back
                 </Text>
-                <Text className="text-2xl font-psemibold text-white">
-                  {user.username}
-                </Text>
+                {user && (
+                  <Text className="text-2xl font-psemibold text-white">
+                    {user.username}
+                  </Text>
+                )}
               </View>
 
               <View className="mt-1.5">
@@ -67,7 +69,6 @@ const Home = () => {
               <Text className="text-lg font-pregular text-gray-100 mb-3">
                 Latest Videos
               </Text>
-
               <Trending posts={latestPosts ?? []} />
             </View>
           </View>
